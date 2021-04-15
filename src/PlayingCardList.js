@@ -16,8 +16,13 @@ function CardTable() {
 	//   setCards(cards => [...cards, { ...response.data, id: uuid() }]);
 	// };
 
-	const url = 'https://deckofcardsapi.com/api/deck/new/draw/';
-	const [ cards, addCard ] = useAxios(url);
+	// const url = 'https://deckofcardsapi.com/api/deck/new/draw/';
+	// const [ cards, addCard ] = useAxios(url);
+
+	const [ cards, addCardToArray ] = useAxios();
+	const addCard = () => {
+		addCardToArray('https://deckofcardsapi.com/api/deck/new/draw/');
+	};
 
 	return (
 		<div className="PlayingCardList">
