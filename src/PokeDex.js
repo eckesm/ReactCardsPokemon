@@ -10,18 +10,7 @@ import './PokeDex.css';
  * Can also add a new card at random,
  * or from a dropdown of available pokemon. */
 function PokeDex() {
-	// const [pokemon, setPokemon] = useState([]);
-	// const addPokemon = async name => {
-	//   const response = await axios.get(
-	//     `https://pokeapi.co/api/v2/pokemon/${name}/`
-	//   );
-	//   setPokemon(pokemon => [...pokemon, { ...response.data, id: uuid() }]);
-	// };
-
-	const [ pokemon, addPokemonToArray ] = useAxios();
-	const addPokemon = name => {
-		addPokemonToArray(`https://pokeapi.co/api/v2/pokemon/${name}/`);
-	};
+	const [ pokemon, addPokemon ] = useAxios('https://pokeapi.co/api/v2/pokemon/');
 
 	return (
 		<div className="PokeDex">
