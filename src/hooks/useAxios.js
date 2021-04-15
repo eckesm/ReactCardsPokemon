@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { v4 as uuid } from 'uuid';
 import axios from 'axios';
+import useLocalStorage from './useLocalStorage'
 
-const useAxios = (formatter, baseUrl) => {
-	const [ cardArray, setCardArray ] = useState([]);
+const useAxios = (formatter, key, baseUrl) => {
+	// const [ cardArray, setCardArray ] = useState([]);
+	const [ cardArray, setCardArray ] = useLocalStorage(key,[]);
 
 	const addToArray = async (restOfUrl = '') => {
 		const response = await axios.get(`${baseUrl}${restOfUrl}`);

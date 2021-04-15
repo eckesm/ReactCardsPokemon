@@ -11,6 +11,7 @@ import './PlayingCardList.css';
 function CardTable() {
 	const [ cards, addCard, clearCards ] = useAxios(
 		formatPlayingCards,
+    'playingcards',
 		'https://deckofcardsapi.com/api/deck/new/draw/'
 	);
 
